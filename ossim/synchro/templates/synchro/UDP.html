@@ -1,11 +1,92 @@
 <!DOCTYPE html>
 
 <style>
+
+#socket {
+  background-color: #c5f0f1;
+  padding: .5em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 6px;
+  color: #000;
+  width : 125px;
+  height : 40px;
+  font-family: 'Oswald';
+  font-size: 20px;
+  text-decoration: none;
+  border: none;
+}
+#socket:hover {
+  border: none;
+  background: #ebc4f2;
+  box-shadow: 0px 0px 1px #777;
+}
+
+#receive{
+  background-color: #c5f0f1;
+  padding: .5em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 6px;
+  color: #000;
+  width : 125px;
+  height : 40px;
+  font-family: 'Oswald';
+  font-size: 20px;
+  text-decoration: none;
+  border: none;
+}
+#receive:hover {
+  border: none;
+  background: #ebc4f2;
+  box-shadow: 0px 0px 1px #777;
+}
+
+
+#send {
+  background-color: #c5f0f1;
+  padding: .5em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 6px;
+  color: #000;
+  width : 125px;
+  height : 40px;
+  font-family: 'Oswald';
+  font-size: 20px;
+  text-decoration: none;
+  border: none;
+}
+#send:hover {
+  border: none;
+  background: #ebc4f2;
+  box-shadow: 0px 0px 1px #777;
+}
+
+
+  #close {
+  background-color: #c5f0f1;
+  padding: .5em;
+  width : 125px;
+  height : 40  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 6px;
+  color: #000;
+  font-family: 'Oswald';
+  font-size: 20px;
+  text-decoration: none;
+  border: none;
+}
+#close:hover {
+  border: none;
+  background: #ebc4f2;
+  box-shadow: 0px 0px 1px #777;
+}
   #container {
   width: 953px;
   height: 5px;
   position: absolute;
-  background: white;
+  background: #5E2750;
   top: 58%;
   left: 18%;
   }
@@ -13,48 +94,72 @@
   width: 50px;
   height: 5px;
   position: absolute;
-  background-color: white;
+  background-color: #5E2750;
   top: 0%;
-  left: 95%;
+  left: 0%;
   opacity: 0;
   }
+    
+    body{
+    background-color : #5E2750;
+    color: #ebc4f2;
+    }
+
+  #bind {
+  background-color: #c5f0f1;
+  padding: .5em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 6px;
+  color: #000;
+  width : 125px;
+  height : 40px;
+  font-family: 'Oswald';
+  font-size: 20px;
+  text-decoration: none;
+  border: none;
+}
+#bind:hover {
+  border: none;
+  background: #ebc4f2;
+  box-shadow: 0px 0px 1px #777;
+}
 </style>
 
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 
   <div class="container-fluid">
-    <div class="panel panel-primary">
-    <div class="panel panel-heading">
     <center><h1 >UDP socket programming <br /></h1></center>
-  </div>
-<div class="panel panel-body">
-    <button class="btn btn-primary" type ="button", onclick ="socket()", style ="height:25px;width:125px;line-height:1">socket()</button> This function shall create an unbound socket in a communications domain, and return a file descriptor that can be used in later function calls that operate on sockets.
-    <br/><br/>
-    <button id ="bind" class="btn btn-primary" type ="button", onclick ="bind()", style ="height:25px;width:125px;line-height:1" disabled>bind()</button> This function shall assign a local socket address address to a socket identified by descriptor socket that has no local socket address assigned.
-    <br/><br/>
-    <button id ="receive" class="btn btn-primary" type ="button", onclick ="receive()", style ="height:25px;width:125px;line-height:1" disabled>receive()</button> This function receives a message from a connectionless-mode socket.
-    <br/><br/>
-    <button id="send" class="btn btn-primary" type ="button", onclick ="send()", style ="height:25px;width:125px;line-height:1" disabled>send()</button> This function sends a message to a gived destination address through a connectionless-mode socket.
-    <br/><br/>
-    <button id ="close" class="btn btn-primary" type ="button", onclick ="closee()", style ="height:25px;width:125px;line-height:1" disabled>close()</button> This function closes the communication.
 
-    <button type = "button", id ="server", name = "server", style="height:125px;width:125px;position:absolute;top:50%;left:10%;border-radius:125px;border:1px solid #000">Server </button>
-    <button type = "button", id ="client", name = "client", style="height:125px;width:125px;position:absolute;top:50%;left:80%;border-radius:125px;border:1px solid #000">Client </button>
-</div>
-    <button type = "button", id ="one", name = "one", style="height:30px;width:30px;position:absolute;top:51%;left:18%;border-radius:30px;border:1px solid #FFFFFF;background-color:#FFFFFF"></button>
-    <button type = "button", id ="two", name = "two", style="height:30px;width:30px;position:absolute;top:56%;left:19%;border-radius:30px;border:1px solid #FFFFFF;background-color:#FFFFFF"></button>
-    <button type = "button", id ="three", name = "three", style="height:30px;width:30px;position:absolute;top:61%;left:18%;border-radius:30px;border:1px solid #FFFFFF;background-color:#FFFFFF"></button>
-    <button type = "button", id ="four", name = "four", style="height:30px;width:30px;position:absolute;top:47%;left:20%;border-radius:30px;border:1px solid #FFFFFF;background-color:#FFFFFF"></button>
-    <button type = "button", id ="five", name = "five", style="height:30px;width:30px;position:absolute;top:56%;left:22%;border-radius:30px;border:1px solid #FFFFFF;background-color:#FFFFFF"></button>
-    <button type = "button", id ="six", name = "six", style="height:30px;width:30px;position:absolute;top:65%;left:20%;border-radius:30px;border:1px solid #FFFFFF;background-color:#FFFFFF"></button>
+    <button id ="socket" class="btn btn-primary" type ="button", onclick ="socket()">socket()</button> This function shall create an unbound socket in a communications domain, and return a file descriptor that can be used in later function calls that operate on sockets.
+    <br/><br/>
+    <button id ="bind" class="btn btn-primary" type ="button", onclick ="bind()" disabled>bind()</button> This function shall assign a local socket address address to a socket identified by descriptor socket that has no local socket address assigned.
+    <br/><br/>
+    <button id ="receive" class="btn btn-primary" type ="button", onclick ="receive()"disabled>receive()</button> This function receives a message from a connectionless-mode socket.
+    <br/><br/>
+    <button id="send" class="btn btn-primary" type ="button", onclick ="send()"disabled>send()</button> This function sends a message to a gived destination address through a connectionless-mode socket.
+    <br/><br/>
+    <button id ="close" class="btn btn-primary" type ="button", onclick ="closee()" disabled>close()</button> This function closes the communication.
+
+    <button type = "button", id ="server", name = "server", style="background-color: #5E2750;color:#5E2750;height:25px;width:140px;position:absolute;top:63%;left:10%;border-radius:25px;border:1px solid #5E2750">Server </button>
+    <input type="image" name="imgbtn" src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/128/Devices-computer-icon.png"  alt="Tool Tip", style="position:absolute;top:50%;left:10%;">
+    <button type = "button", id ="client", name = "client", style="background-color: #5E2750;color:#5E2750;height:25px;width:140px;position:absolute;top:63%;left:80%;border-radius:25px;border:1px solid #5E2750">Client </button>
+    <input type="image" name="imgbtn" src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/128/Devices-computer-icon.png"  alt="Tool Tip", style="position:absolute;top:50%;left:80%;">
+
+    <button type = "button", id ="one", name = "one", style="height:20px;width:30px;position:absolute;top:51%;left:18%;border-radius:30px;border:1px solid #5E2750;background-color:#5E2750"></button>
+    <button type = "button", id ="two", name = "two", style="height:20px;width:30px;position:absolute;top:56%;left:19%;border-radius:30px;border:1px solid #5E2750;background-color:#5E2750"></button>
+    <button type = "button", id ="three", name = "three", style="height:20px;width:30px;position:absolute;top:61%;left:18%;border-radius:30px;border:1px solid #5E2750;background-color:#5E2750"></button>
+    <button type = "button", id ="four", name = "four", style="height:20px;width:30px;position:absolute;top:47%;left:20%;border-radius:30px;border:1px solid #5E2750;background-color:#5E2750"></button>
+    <button type = "button", id ="five", name = "five", style="height:20px;width:30px;position:absolute;top:56%;left:22%;border-radius:30px;border:1px solid #5E2750;background-color:#5E2750"></button>
+    <button type = "button", id ="six", name = "six", style="height:20px;width:30px;position:absolute;top:65%;left:20%;border-radius:30px;border:1px solid #5E2750;background-color:#5E2750"></button>
 
     <button type = "button", id ="connection", name = "connection", style="height:5px;width:953px;position:absolute;top:58%;left:18%;background-color:white;border:1px solid #FFFFFF"> </button>
 
@@ -66,14 +171,14 @@
 
     function socket()
     {
-      document.getElementById("server").style.backgroundColor = '#FFFF00';
-      document.getElementById("client").style.backgroundColor = '#FFFF00';
+      document.getElementById("server").style.backgroundColor = '#c5f0f1';
+      document.getElementById("client").style.backgroundColor = '#c5f0f1';
       document.getElementById("bind").disabled = false;
     }
 
     function bind()
     {
-      document.getElementById("server").style.backgroundColor = '#FF0000';
+      document.getElementById("server").style.backgroundColor = '#ebc4f2';
       document.getElementById("receive").disabled = false;
       document.getElementById("close").disabled = false;
     }
@@ -82,6 +187,7 @@
     {
       document.getElementById("animate").style.backgroundColor = '#FF0000';
       document.getElementById("animate").style.opacity = "1.0";
+      document.getElementById("client").style.backgroundColor = '#ebc4f2'
       var elem = document.getElementById("animate");
       var pos = 903;
       var id = setInterval(frame, 5);
@@ -90,7 +196,7 @@
         if (pos == 0)
         {
           clearInterval(id);
-          document.getElementById("animate").style.backgroundColor = '#FFFFFF';
+          document.getElementById("animate").style.backgroundColor = '#5E2750';
         }
         else
         {
@@ -113,7 +219,7 @@
         if (pos == 903)
         {
           clearInterval(id);
-          document.getElementById("animate").style.backgroundColor = '#FFFFFF';
+          document.getElementById("animate").style.backgroundColor = '#5E2750';
         }
         else
         {
@@ -125,9 +231,9 @@
 
     function closee()
     {
-      document.getElementById("animate").style.backgroundColor = '#FFFFFF'
-      document.getElementById("server").style.backgroundColor = '#DCDCDC'
-      document.getElementById("client").style.backgroundColor = '#DCDCDC';
+      document.getElementById("animate").style.backgroundColor = '#5E2750';
+      document.getElementById("server").style.backgroundColor = '#5E2750';
+      document.getElementById("client").style.backgroundColor = '#5E2750';
       document.getElementById("bind").disabled = true;
       document.getElementById("receive").disabled = true;
       document.getElementById("send").disabled = true;
