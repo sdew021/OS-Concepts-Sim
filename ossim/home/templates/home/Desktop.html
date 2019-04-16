@@ -161,6 +161,24 @@
         height:110px;
     }
 
+    #icon9
+    {
+      position:  absolute;
+      left: 1406px;
+
+      bottom: 9px; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+     width: 100px;
+        height:100px;
+      background: rgba(255,255,255,0.40);
+      border: 2px  solid rgba(0,0,0,0.5);
+      border-radius: 4px; padding: 8px;
+    }
+    #icon9:hover{
+      background: rgba(255,255,255,0.66);
+      width: 110px;
+        height:110px;
+    }
+
 
 	.icon_names{
 
@@ -494,6 +512,15 @@
                 </a>
 
 			</div>
+      <div class="desktop"  ondragover="drag_over(event)" ondrop="drop(event)">
+        <a href="../../wiki">
+          <div id="icon9" draggable="true" ondragstart="drag_start(event)">
+                    <img border="0" alt="page" src="http://pngimg.com/uploads/wikipedia/wikipedia_PNG15.png" height="50px" width="80px"  >
+          <p class="icon_names">WIKI</p>
+          </div>
+                </a>
+
+      </div>
 
 
 

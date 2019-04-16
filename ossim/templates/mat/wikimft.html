@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+{%load static%}
     <title>MFT Wiki</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +34,7 @@
   <!-- About Section -->
     <div class="w3-row w3-padding-64" id="about">
         <div class="w3-col m6 w3-padding-large w3-hide-small">
-            <img src="/images/MFT1.jpg" class="w3-round w3-image w3-opacity-min" alt="MFT 1" width="600" height="750" style = "padding-top: 50px">
+            <img src="{%static '/images/MFT1.jpg' %}" class="w3-round w3-image w3-opacity-min" alt="MFT 1" width="600" height="750" style = "padding-top: 50px">
         </div>
 
         <div class="w3-col m6 w3-padding-large">
@@ -61,7 +62,7 @@
             <p class="w3-text-grey">In worst fit approach is to locate largest available free portion so that the portion left will be big enough to be useful. It is the reverse of best fit.</p><br>
         </div>
         <div class="w3-col l6 w3-padding-large">
-            <img src="/images/MFT2.jpg" class="w3-round w3-image w3-opacity-min" alt="MFT2" style="width:100%; padding-top: 50px">
+            <img src="{%static '/images/MFT2.jpg' %}" class="w3-round w3-image w3-opacity-min" alt="MFT2" style="width:100%; padding-top: 50px">
         </div>
     </div>
     <hr>

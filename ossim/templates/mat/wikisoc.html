@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+{%load static%}
     <title>Socket Programming Wiki</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,9 +34,9 @@
   <!-- About Section -->
     <div class="w3-row w3-padding-64" id="about">
         <div class="w3-col m6 w3-padding-large w3-hide-small">
-            <img src="/images/Soc1.png" class="w3-round w3-image w3-opacity-min" alt="Soc 1" width="600" height="750" style = "padding-top: 100px">
+            <img src="{% static '/images/Soc1.png' %}" class="w3-round w3-image w3-opacity-min" alt="Soc 1" width="600" height="750" style = "padding-top: 100px">
             </br></br></br>
-            <img src="/images/Soc3.jpg" class="w3-round w3-image w3-opacity-min" alt="Soc" style="width:100%; padding-top: 10px">
+            <img src="{% static '/images/Soc3.jpg' %}" class="w3-round w3-image w3-opacity-min" alt="Soc" style="width:100%; padding-top: 10px">
         </div>
 
         <div class="w3-col m6 w3-padding-large">
@@ -76,7 +77,7 @@
                                     5.Send and receive data using the read() and write() system calls.</p><br>
         </div>
         <div class="w3-col l6 w3-padding-large">
-            <img src="/images/Soc2.jpg" class="w3-round w3-image w3-opacity-min" alt="Soc" style="width:100%; padding-top: 10px">
+            <img src="{% static '/images/Soc2.jpg' %}" class="w3-round w3-image w3-opacity-min" alt="Soc" style="width:100%; padding-top: 10px">
         </div>
     </div>
     <hr>

@@ -28,7 +28,7 @@ def mft(request):
     return render(request, 'mat/wikimft.html')
 
 def ps(request):
-    return render(request, 'mat/wikiproscd.html')
+    return render(request, 'mat/wikiprocscd.html')
 
 def soc(request):
     return render(request, 'mat/wikisoc.html')

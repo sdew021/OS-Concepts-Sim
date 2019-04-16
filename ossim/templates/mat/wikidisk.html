@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+{% load static %}
     <title>Disk Scheduling Wiki</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +34,7 @@
   <!-- About Section -->
     <div class="w3-row w3-padding-64" id="about">
         <div class="w3-col m6 w3-padding-large w3-hide-small">
-            <img src="/images/D1.png" class="w3-round w3-image w3-opacity-min" alt="D" width="600" height="750" style = "padding-top: 50px">
+            <img src="{% static '/images/D1.png' %}" class="w3-round w3-image w3-opacity-min" alt="D" width="600" height="750" style = "padding-top: 50px">
         </div>
 
         <div class="w3-col m6 w3-padding-large">
@@ -70,8 +71,9 @@
                                     Thus, it also prevents the extra delay which occurred due to unnecessary traversal to the end of the disk.</p><br>
         </div>
         <div class="w3-col l6 w3-padding-large">
-            <img src="/images/D2.jpg" class="w3-round w3-image w3-opacity-min" alt="D" style="width:100%; padding-top: 150px">
-            <img src="/images/D3.jpg" class="w3-round w3-image w3-opacity-min" alt="D" style="width:100%; padding-top: 150px">
+            {% load static %}
+            <img src="{% static '/images/D2.jpg' %}" class="w3-round w3-image w3-opacity-min" alt="D" style="width:100%; padding-top: 150px">
+            <img src="{% static '/images/D3.jpg' %}" class="w3-round w3-image w3-opacity-min" alt="D" style="width:100%; padding-top: 150px">
         </div>
     </div>
     <hr>

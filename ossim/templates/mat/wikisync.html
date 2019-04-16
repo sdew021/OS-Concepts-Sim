@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+{%load static%}
     <title>Process Synchronization Wiki</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,8 +34,8 @@
   <!-- About Section -->
     <div class="w3-row w3-padding-64" id="about">
         <div class="w3-col m6 w3-padding-large w3-hide-small">
-            <img src="/images/PS1.png" class="w3-round w3-image w3-opacity-min" alt="PS" width="600" height="750" style = "padding-top: 100px">
-            <img src="/images/PS2.png" class="w3-round w3-image w3-opacity-min" alt="PS" width="600" height="750" style = "padding-top: 100px">
+            <img src="{%static '/images/PS1.png' %}" class="w3-round w3-image w3-opacity-min" alt="PS" width="600" height="750" style = "padding-top: 100px">
+            <img src="{%static '/images/PS2.png' %}" class="w3-round w3-image w3-opacity-min" alt="PS" width="600" height="750" style = "padding-top: 100px">
         </div>
 
         <div class="w3-col m6 w3-padding-large">
@@ -90,8 +91,8 @@
                                     various queueing situations, such as a multiperson helpdesk with a computerized call waiting system for holding a limited number of incoming calls.</p>
         </div>
         <div class="w3-col l6 w3-padding-large">
-            <img src="/images/PS3.png" class="w3-round w3-image w3-opacity-min" alt="PS" style="width:100%; padding-top: 150px">
-            <img src="/images/PS4.jpg" class="w3-round w3-image w3-opacity-min" alt="PS" style="width:100%; padding-top: 10px">
+            <img src="{%static '/images/PS3.png' %}" class="w3-round w3-image w3-opacity-min" alt="PS" style="width:100%; padding-top: 150px">
+            <img src="{%static '/images/PS4.jpg' %}" class="w3-round w3-image w3-opacity-min" alt="PS" style="width:100%; padding-top: 10px">
         </div>
     </div>
     <hr>
