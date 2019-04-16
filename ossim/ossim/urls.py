@@ -1,31 +1,21 @@
-"""ossim URL Configuration
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.10/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.conf.urls import url, include
-    2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
-"""
-from django.conf.urls import url,include
 from django.contrib import admin
+#from django.urls import path
+from django.conf.urls import include,url
 from . import views
+
+app_name='ossim'
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.index),
-    url(r'^job/', include('job.urls')),
-    url(r'^disk/', include('disk.urls')),
-    url(r'^synchro/', include('synchro.urls')),
-    url(r'^process/', include('process.urls')),
-    url(r'^memory/', include('memory.urls')),
+    url(r'^login/',include('home.urls')),
+    url(r'^',include('booting.urls')),
+    url(r'^sockets/',include('sockets.urls')),
+    url(r'^synchro/',include('synchro.urls')),
+    url(r'^file_allocation/',include('file_alloc.urls')),
+    url(r'^deadlock/',include('deadlock.urls')),
+    url(r'^page/',include('page.urls')),
     url(r'^matdemo/', include('mat.urls')),
-    url(r'^mat/', views.matindex),
-    url(r'^filesystem/', include('filesystem.urls')),
-    url(r'^wiki/', include('wikipages.urls')),
+    #url(r'^mat/', views.matindex),
+    url(r'^disk/',include('disk_sched.urls'),name='disk'),
+    url(r'^process/',include('process.urls'))
 ]

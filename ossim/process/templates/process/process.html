@@ -9,6 +9,7 @@
   <script type='text/javascript' src='{% static 'js/input.js' %}'></script>
   <script type='text/javascript' src='{% static 'js/display.js' %}'></script>
   <link rel="stylesheet" href='{% static 'css/demo.css' %}'>
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -16,33 +17,36 @@
 </head>
 
 
-<body style="padding:10px;">
-  <div class="panel panel-primary">
-      <div class="panel-heading"><h1 style="text-alig
-        var text = JSON.strn:center;">
-        Process Scheduling
+<body style="background-image: url('https://i.pinimg.com/originals/9d/4d/07/9d4d07ca7d591bb3cd3d9f4df2624bbf.jpg">
+  <div ">
+      <div ><h1 style="text-alig
+        var text = JSON.strn:center;color: #33C71C;text-align: center;text-shadow: 1px 1px black;">
+        <b>Process Scheduling</b>
       </h1></div>
-  <div class="panel-body">
+       <div class="container" style="color:black">
 
-    <div id="output">
-    </div>
+    <div class="col-lg-6" style="">
 
-    <div class="card" style="height:70px;">
-        <div style="width:250px;float:left;text-align:left;">
-          Enter arrival time:
-          <input style="width:200px;"id="newarrivaltime" class="form-control" type="text" value=""></input>
-        </div>
-        <div style="width:300px;float:left;text-align:left;">
-          Enter burst time:
-          <input style="width:200px;float:left;" id="newbursttime" class="form-control" type="text" value=""></input>
-          <button class="btn btn-success" onclick="addToList()" style="float:left;margin-left:10px;">Add</button>
-        </div>
-    </div>
-    <div id="tq" style="text-align:left;"></div>
-    <div style="float:left;">
-  <label for="sel1" style="float:left;">Select Algorithm to be used :</label>
+
+
+        <div class="container" style="color: white">
+          <div id="output" style="color: white">
+          </div>
+          <br>
+          <div class="card" style="height:50px;">
+              <div style="width:250px;float:left;text-align:left;color:white">
+                Enter arrival time:
+              <input style="width:200px;" id="newarrivaltime" class="form-control" type="number" min="0" value=""></input>
+              </div>
+              <div style="width:300px;float:left;text-align:left;color:white">
+                Enter burst time:
+                <input style="width:200px;float:left;" id="newbursttime" class="form-control" type="number" min="0" value=""></input>
+              </div>
+              <div style="width:300px;float:left;text-align:left;color:white">
+                select algorithm:
+
   <br>
-      <select class="form-control" id="sel1" style="width:400px;">
+      <select class="form-control" id="sel1" style="width:400px;color:white;background-color: #6CC3EF">
         <option>First come first serve(FCFS)</option>
         <option>Shortest job first(SJF)</option>
         <option>Round-Robin(RR)</option>
@@ -50,53 +54,86 @@
 
       </select>
     </div>
-  </div>
+            <div class="row" style="float: right;margin-right: 20px">
+              <button class="btn btn-success" onclick="addToList()" style="float:left;margin-top:20px;margin-left:10px;">Add</button>
+            </div>
 
-    <div class="panel-footer" style="height:50px;">
-    	<button style="float:right;" id="sender" class="btn btn-primary">Send the entire data</button>
+          </div>
+            <div class="row" style="float: right;margin-right: 20px">
+            <div class="" id ="tq" style="height:20px;">
+
+        </div>
+            </div>
+
+        </div>
+        <br><br>
+
+        <div class="" style="height:20px;">
+            <button style="float:right;background-color:#99004D;color:white;" id="sender" class="btn btn-primary"><b>Send data</b></button>
+        </div>
+
+
+
+    </div>
+    <div class="col-lg-6"></div>
+
+  </div>
+  <div class="panel-body">
+
+    <div id="output">
+    </div>
+
+  </div>
+  <div>
+   <div class="container" style="background-color: white;opacity:0.9;margin-bottom: 20px">
+    <div class="col-lg-6">
+      <div class="" style="padding:0px;background-color: gray">
+        <h3><b>Queue Status</b></h3>
+      </div>
+      <div class="" id="comments" style="padding:10px;color:black;text-align:left;border: 2px solid black">
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="">
+        <div class="" style="padding:0px;background-color: gray" >
+          <h3><b>Table</b></h3>
+        </div>
+        <div class="panel-content">
+          <table id="ptab" class="table table-bordered">
+            <thead>
+              <tr id="thead">
+                <th>PNO.</th>
+
+                <th>Arrival time</th>
+                <th>Burst time</th>
+                <th>Completion time</th>
+                <th>Waiting time</th>
+                <th>Turn-around time</th>
+              </tr>
+              <tbody id="ptable">
+
+              </tbody>
+            </thead>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="panel panel-success">
-    <div class="panel-heading">
-      <h3 >
+
+
+        <div class="row" >
+      <h3>
       Gantt chart
     </h3>
-    </div>
-    <div id="gantth"></div>
-    <br><br>
-    <div id="outer-div">
-  </div>
-    <br><br>
-</div>
-  <div class="panel panel-warning" style="width:50%;float:left;">
-  <div class="panel-heading">
-  	<h3>Operations Taking Place</h3>
-  </div>
-  <div id="comments" class="panel-content">
-  </div>
-</div>
-  <div class="panel panel-warning" style="width:50%;float:left;">
-  <div class="panel-heading">
-  	<h3>Table</h3>
-  </div>
-  	<div class="panel-content">
-	<table id="ptab" class="table table-bordered">
- 	<thead>
- 	<tr id="thead">
- 	<th>PNO.</th>
-	<th>Arrival time</th>
-	<th>Burst time</th>
-	<th>Completion time</th>
-	<th>Waiting time</th>
-	<th>Turn-around time</th>
-	</tr>
-	<tbody id="ptable">
 
-	</tbody>
-	</thead>
-	</table>
-  	</div>
-  	</div>
+    <div id="gantth" style="background-color: white"> </div>
+    <br><br>
+    <div id="outer-div" style="background-color: white">
+  </div>
+    <br><br>
+            </div>
+  </div>
+
 </body>
 </html>
 
