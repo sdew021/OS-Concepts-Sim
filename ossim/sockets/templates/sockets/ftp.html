@@ -25,7 +25,7 @@ opacity: 0;
 
 
 body{
-  background-color:#C594C5;
+  background-image: linear-gradient(to right,rgb(233, 153, 88) 15% ,  rgb(255, 51, 0)  50%, rgb(233, 153, 88));
 }
 </style>
 
@@ -40,20 +40,20 @@ body{
     <center ><h1  style= "color:white;font-family: 'Montserrat', Helvetica, sans-serif;">File Transfer Protocol</h1>
       <br/><br/>
     </center>
-    <button id = "Serv_socket" class="btn btn-primary" type ="button", onclick ="sersocket()", style ="margin-left:430px;height:25px;width:125px;line-height:1; background-color:#f44336;border:#f44336;">Server Socket()</button>
-    <button id = "Client_socket" class="btn btn-primary" type ="button", onclick ="clisocket()", style ="margin-left:170px;height:25px;width:125px;line-height:1; background-color:#f44336;border:#f44336;">Client Socket()</button>
+    <button id = "Serv_socket" class="btn btn-primary" type ="button", onclick ="sersocket()", style ="margin-left:10% ;height:25px;width:125px;line-height:1; background-color:#E5DF27;border:#E5DF27; color:black; border-radius: 12%;">Server Socket()</button>
+    <button id = "Client_socket" class="btn btn-primary" type ="button", onclick ="clisocket()", style ="margin-left:80%;height:25px;width:125px;line-height:1; background-color:#E5DF27;border:#E5DF27; color:black; border-radius: 12%;">Client Socket()</button>
     <br/><br/>
-    <button id  = "bind" class="btn btn-primary" type ="button", onclick ="bind()", style ="margin-left:430px;height:25px;width:125px;line-height:1" disabled>Bind()</button>
+    <button id  = "bind" class="btn btn-primary" type ="button", onclick ="bind()", style ="margin-left:15%;height:25px;width:125px;line-height:1; color:black; border-radius: 12%;" disabled>Bind()</button>
     <br/><br/>
-    <button id ="listen" class="btn btn-primary" type ="button", onclick ="listen()", style ="margin-left:430px;height:25px;width:125px;line-height:1" disabled>Listen()</button>
-    <button id ="connect" class="btn btn-primary" type ="button", onclick ="connect()", style ="margin-left:170px;height:25px;width:125px;line-height:1" disabled>Connect()</button>
+    <button id ="listen" class="btn btn-primary" type ="button", onclick ="listen()", style ="margin-left:20%;height:25px;width:125px;line-height:1; color:black; border-radius: 12%;" disabled>Listen()</button>
+    <button id ="connect" class="btn btn-primary" type ="button", onclick ="connect()", style ="margin-left:75%;  height:25px;width:125px;line-height:0; color:black; border-radius: 12%;" disabled>Connect()</button>
     <br/><br/>
-    <button id  ="accept"  class="btn btn-primary" type ="button", onclick ="accept()", style ="margin-left:430px;height:25px;width:125px;line-height:1" disabled>Accept()</button>
+    <button id  ="accept"  class="btn btn-primary" type ="button", onclick ="accept()", style ="margin-left:25%;height:25px;width:125px;line-height:1; color:black; border-radius: 12%;" disabled>Accept()</button>
       <br/><br/>
-    <button id ="move" class="btn btn-primary" type ="button", onclick ="myMove()", style ="margin-left:430px;height:25px;width:125px;line-height:1" disabled>SendtoClient()</button>
-    <button id ="move2" class="btn btn-primary" type ="button", onclick ="myMove2()", style ="margin-left:170px;height:25px;width:125px;line-height:1" disabled>SendtoServer()</button>
+    <button id ="move" class="btn btn-primary" type ="button", onclick ="myMove()", style ="margin-left:30%;height:25px;width:125px;line-height:1; color:black;  border-radius: 12%;" disabled>SendtoClient()</button>
+    <button id ="move2" class="btn btn-primary" type ="button", onclick ="myMove2()", style ="margin-left:70%;height:25px;width:125px;line-height:1; color:black;  border-radius: 12%;" disabled>SendtoServer()</button>
     <br/><br/>
-    <button id ="close" class="btn btn-primary" type ="button", onclick ="closee()", style ="margin-left:583px;height:25px;width:125px;line-height:1"disabled >Close()</button>
+    <button id ="close" class="btn btn-primary" type ="button", onclick ="closee()", style ="margin-left:650px;height:25px;width:125px;line-height:1; color:black;  border-radius: 12%;"disabled >Close()</button>
 
 
 
@@ -72,8 +72,8 @@ body{
     <div id ="animate"></div>
     <img id = "cliefile" src = "{% static './images/blank-file-3-256.gif' %}" style="margin-left:420px;border-radius:15px; visibility:hidden;">
     <br/><br/>
-    <button id = "servup" class="btn btn-primary" type ="button", onclick ="servup() ",  style ="margin-left:200px;height:25px;width:125px;line-height:1; background-color:#f44336;border:#f44336; visibility:hidden; ">Upload File</button>
-    <button id = "clientup" class="btn btn-primary" type ="button", onclick ="cliup()", style ="margin-left:550px;height:25px;width:125px;line-height:1; background-color:#f44336;border:#f44336; visibility:hidden;">Upload File</button>
+    <button id = "servup" class="btn btn-primary" type ="button", onclick ="servup() ",  style ="margin-left:200px;height:25px;width:125px;line-height:1; background-color:#64FD22;border:#64FD22; visibility:hidden; color:black; ">Upload File</button>
+    <button id = "clientup" class="btn btn-primary" type ="button", onclick ="cliup()", style ="margin-left:550px;height:25px;width:125px;line-height:1; background-color:#64FD22;border:#64FD22; visibility:hidden; color:black;">Upload File</button>
     <br/><br/>
 
   </div>
@@ -99,12 +99,12 @@ body{
     }
     function sersocket()
     {
-      document.getElementById("bind").style.backgroundColor = "#f44336";
+      document.getElementById("bind").style.backgroundColor = "#E5DF27";
       document.getElementById("bind").style.border = "#f44336";
-      document.getElementById("close").style.backgroundColor = "#f44336";
-      document.getElementById("close").style.border = "#f44336";
+      document.getElementById("close").style.backgroundColor = "#E5DF27";
+      document.getElementById("close").style.border = "#E5DF27";
 document.getElementById("Serv_socket").disabled = true;
-document.getElementById("Serv_socket").style.backgroundColor = "#ff9999";
+document.getElementById("Serv_socket").style.backgroundColor = "#2363B7";
 document.getElementById("Serv_socket").style.border = "#ff9999";
       document.getElementById("servertext").value="      Waiting to Bind";
       document.getElementById("bind").disabled = false;
@@ -113,12 +113,12 @@ document.getElementById("Serv_socket").style.border = "#ff9999";
 
     function clisocket()
     {
-      document.getElementById("connect").style.backgroundColor = "#f44336";
+      document.getElementById("connect").style.backgroundColor = "#E5DF27";
       document.getElementById("connect").style.border = "#f44336";
-      document.getElementById("close").style.backgroundColor = "#f44336";
+      document.getElementById("close").style.backgroundColor = "#E5DF27";
       document.getElementById("close").style.border = "#f44336";
       document.getElementById("Client_socket").disabled = true;
-      document.getElementById("Client_socket").style.backgroundColor = "#ff9999";
+      document.getElementById("Client_socket").style.backgroundColor = "#2363B7";
       document.getElementById("Client_socket").style.border = "#ff9999";
       document.getElementById("clienttext").value="      Waiting to Connect";
       document.getElementById("connect").disabled = false;
@@ -136,10 +136,10 @@ document.getElementById("Serv_socket").style.border = "#ff9999";
 document.getElementById("cliefile").style.visibility = "hidden";
       document.getElementById("servertext").style.display = "inline";
   document.getElementById("clienttext").style.display = "inline";
-      document.getElementById("Serv_socket").style.backgroundColor = "#f44336";
+      document.getElementById("Serv_socket").style.backgroundColor = "#E5DF27";
       document.getElementById("Serv_socket").style.border = "#f44336";
       document.getElementById("Serv_socket").disabled  = false;
-      document.getElementById("Client_socket").style.backgroundColor = "#f44336";
+      document.getElementById("Client_socket").style.backgroundColor = "#E5DF27";
       document.getElementById("Client_socket").style.border = "#f44336";
       document.getElementById("Client_socket").disabled  = false;
       document.getElementById("close").disabled  = true;
@@ -178,7 +178,7 @@ document.getElementById("cliefile").style.visibility = "hidden";
     {
       document.getElementById("bind").style.backgroundColor = "";
       document.getElementById("bind").style.border = "";
-      document.getElementById("listen").style.backgroundColor = "#f44336";
+      document.getElementById("listen").style.backgroundColor = "#E5DF27";
       document.getElementById("listen").style.border = "#f44336";
       document.getElementById("bind").disabled = true;
       document.getElementById("servertext").value="      Waiting for Listen";
@@ -192,7 +192,7 @@ document.getElementById("cliefile").style.visibility = "hidden";
       numb1 = 1;
       document.getElementById("listen").style.backgroundColor = "";
       document.getElementById("listen").style.border = "";
-      document.getElementById("accept").style.backgroundColor = "#f44336";
+      document.getElementById("accept").style.backgroundColor = "#E5DF27";
       document.getElementById("accept").style.border = "#f44336";
       document.getElementById("listen").disabled = true;
       document.getElementById("servertext").value="      Waiting to Accept";
@@ -205,7 +205,7 @@ document.getElementById("cliefile").style.visibility = "hidden";
       if(numb1 == 1)
       {document.getElementById("connect").style.backgroundColor = "";
       document.getElementById("connect").style.border = "";
-      document.getElementById("accept").style.backgroundColor = "#f44336";
+      document.getElementById("accept").style.backgroundColor = "#E5DF27";
       document.getElementById("accept").style.border = "#f44336";
       document.getElementById("connect").disabled = true;
       document.getElementById("clienttext").value="      Waiting to be Accepted";
@@ -232,9 +232,9 @@ document.getElementById("cliefile").style.visibility = "hidden";
 
       document.getElementById("move").disabled = false;
       document.getElementById("move2").disabled = false;
-      document.getElementById("move").style.backgroundColor = "#f44336";
+      document.getElementById("move").style.backgroundColor = "#E5DF27";
       document.getElementById("move").style.border = "#f44336";
-      document.getElementById("move2").style.backgroundColor = "#f44336";
+      document.getElementById("move2").style.backgroundColor = "#E5DF27";
       document.getElementById("move2").style.border = "#f44336";
       document.getElementById("servertext").style.display = "none";
   document.getElementById("clienttext").style.display = "none";
