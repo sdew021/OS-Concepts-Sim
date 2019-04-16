@@ -1,0 +1,699 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+
+    {% load static %}
+                <link rel="stylesheet" type="text/css" href="{% static 'home/assets/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'home/assets/css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'home/assets/css/fonts.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'home/assets/css/style.css' %}" />
+    <link rel="stylesheet" href="bower_components/xterm.js/dist/xterm.css" />
+    <script src="bower_components/xterm.js/dist/xterm.js"></script>
+<style>
+    #icon1
+    {
+      position: absolute;
+      left: 525px;
+
+      bottom: 9px; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+       width: 100px;
+        height:100px;
+      background: rgba(255,255,255,0.40);
+      border: 2px  solid rgba(0,0,0,0.5);
+      border-radius: 4px; padding: 8px;
+    }
+    #icon1:hover{
+      background: rgba(255,255,255,0.66);
+      width: 110px;
+        height:110px;
+    }
+
+     #icon2
+    {
+      position:  absolute;
+      left: 635px;
+
+      bottom: 9px; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+      width: 100px;
+      height:100px;
+      background: rgba(255,255,255,0.40);
+      border: 2px  solid rgba(0,0,0,0.5);
+      border-radius: 4px; padding: 8px;
+    }
+    #icon2:hover{
+      background: rgba(255,255,255,0.66);
+      width: 110px;
+        height:110px;
+    }
+
+
+         #icon3
+    {
+      position:  absolute;
+      left: 745px;
+
+      bottom: 9px; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+        width: 100px;
+        height:100px;
+      background: rgba(255,255,255,0.40);
+      border: 2px  solid rgba(0,0,0,0.5);
+      border-radius: 4px; padding: 8px;
+    }
+    #icon3:hover{
+      background: rgba(255,255,255,0.66);
+      width: 110px;
+        height:110px;
+    }
+
+
+         #icon4
+    {
+      position:  absolute;
+      left: 855px;
+
+      bottom: 9px; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+     width: 100px;
+        height:100px;
+      background: rgba(255,255,255,0.40);
+      border: 2px  solid rgba(0,0,0,0.5);
+      border-radius: 4px; padding: 8px;
+    }
+    #icon4:hover{
+      background: rgba(255,255,255,0.66);
+      width:110px;
+        height:110px;
+    }
+
+              #icon5
+    {
+      position:  absolute;
+      left: 965px;
+
+      bottom: 9px;/* set these so Chrome doesn't return 'auto' from getComputedStyle */
+        width: 100px;
+        height:100px;
+      background: rgba(255,255,255,0.40);
+      border: 2px  solid rgba(0,0,0,0.5);
+      border-radius: 4px; padding: 8px;
+    }
+    #icon5:hover{
+      background: rgba(255,255,255,0.66);
+      width: 110px;
+        height:110px;
+    }
+
+           #icon6
+    {
+      position:  absolute;
+      left: 1075px;
+
+      bottom: 9px; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+         width: 100px;
+        height:100px;
+      background: rgba(255,255,255,0.40);
+      border: 2px  solid rgba(0,0,0,0.5);
+      border-radius: 4px; padding: 8px;
+    }
+    #icon6:hover{
+      background: rgba(255,255,255,0.66);
+      width: 110px;
+        height:110px;
+    }
+
+
+     #icon7
+    {
+      position:  absolute;
+      left: 1185px;
+
+      bottom: 9px; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+        width: 100px;
+        height:100px;
+      background: rgba(255,255,255,0.40);
+      border: 2px  solid rgba(0,0,0,0.5);
+      border-radius: 4px; padding: 8px;
+    }
+    #icon7:hover{
+      background: rgba(255,255,255,0.66);
+      width: 110px;
+        height:110px;
+    }
+
+
+         #icon8
+    {
+      position:  absolute;
+      left: 1295px;
+
+      bottom: 9px; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+     width: 100px;
+        height:100px;
+      background: rgba(255,255,255,0.40);
+      border: 2px  solid rgba(0,0,0,0.5);
+      border-radius: 4px; padding: 8px;
+    }
+    #icon8:hover{
+      background: rgba(255,255,255,0.66);
+      width: 110px;
+        height:110px;
+    }
+
+
+	.icon_names{
+
+		font-size: 13px;
+    font-weight: bold;
+        color: black;
+        text-align: center;
+
+	}
+
+
+.navigationbar {
+  overflow: hidden;
+  background-color: rgba(255,255,255,0.25) ;
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+    height: 12%;
+}
+
+.navigationbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding-right: 0px;
+  text-decoration: none;
+
+}
+
+
+
+.navigationbar a.active {
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+    </style>
+    <script>
+
+
+    function drag_start(event)
+    {
+    var style = window.getComputedStyle(event.target, null);
+    var str = (parseInt(style.getPropertyValue("left")) - event.clientX) + ',' + (parseInt(style.getPropertyValue("top")) - event.clientY)+ ',' + event.target.id;
+    event.dataTransfer.setData("Text",str);
+    }
+
+    function drop(event)
+    {
+
+    var offset = event.dataTransfer.getData("Text").split(',');
+    var dm = document.getElementById(offset[2]);
+    dm.style.left = (event.clientX + parseInt(offset[0],10)) + 'px';
+    dm.style.top = (event.clientY + parseInt(offset[1],10)) + 'px';
+    event.preventDefault();
+    return false;
+    }
+
+    function drag_over(event)
+    {
+    event.preventDefault();
+    return false;
+    }
+    document.getElementById('demo').innerHTML = Date();
+
+
+
+    </script>
+
+<title>Desktop</title>
+
+</head>
+<body  >
+	<div id="allContent">
+
+		<!-- All Contents in Desktop , File System  -->
+
+		<div id='desktopContent'>
+
+		<!--	<div class="nav"   >
+				<div class="left">
+					Desktop
+				</div>
+
+				<div class="right">
+
+					<span class="time"></span>
+					<span class="am-pm"></span>
+			<a	href = "/">	<i class="fa fa-power-off fa-fw" onclick="logOut()"></i></a>
+				</div>
+			</div> -->
+
+			<!-- Launching File Explorer , Synchronization Example , Calculator -->
+
+<!--
+			<div class="luncher" >
+				<span data-toggle="tooltip" title="Files" style="cursor:pointer;">
+		   		 <i class="fa fa-folder" id="folder"></i>
+			  	</span>
+
+				<span data-toggle="tooltip" title="Synchronization Example" style="cursor:pointer;">
+				<i class="fa fa-cog" onclick="navigateTo()"></i>
+				</span>
+
+				<span data-toggle='tooltip' title="Calculator" style="cursor:pointer;">
+
+				<button id='createFile' type='button' data-toggle='modal' data-target='.calculator' style="background-color:transparent; border:0;"><i class="fa fa-calculator" aria-hidden="true" onclick="clearCalc()"></i></button>
+				</span>
+
+
+
+
+
+			</div>   -->
+
+
+            <div class="navigationbar nav" style="margin: 0px;padding: 0px">
+
+               <a href="#">    <button class="start"  style="height: 80px; width:80px;margin: 10px">
+               </button></a>
+
+                <div align=center class="right" style=" text-align: center;  border: 1px solid white;right:0;width: 110px;border-radius: 50px;font-size:14px;padding:12px;margin:25px;background-color: grey  ;border:none;height: 50px">
+                	<div>
+						<b><span id="time" style="vertical-align: middle; "></span>
+						<span id="am-pm" style="vertical-align: middle;"></span></b>
+					</div>
+					<div>
+						<span id="demo"></span>
+					</div>
+                </div>
+
+  <div align=center class="right" style="text-align: center;border: 1px solid white;right:0;width: 110px;border-radius:50px; font-size:14px;padding:14px;margin:25px;background-color: grey ;border:none;height: 50px">
+    <a class="fa fa-power-off"  href="{% url 'booting:powerdown' %}" style="font-weight: bold;">  Power Off
+      </a>
+  </div>
+                <a>
+                    <div>
+
+                        <span data-toggle="tooltip" title="Files" style="cursor:pointer;">
+		   		 <i class="fa fa-folder" id="folder" style=" width:90px; height: 100px;background: rgba(255,255,255,0.40);border-radius: 4px;border: 2px  solid rgba(0,0,0,0.5);padding: 15px;margin:5px"><b style="margin: 0px;font-family: Arial, Helvetica, sans-serif;">Docs</b></i>
+			  	</span>
+
+				<span data-toggle="tooltip" title="Synchronization Example" style="cursor:pointer;">
+				<i class="fa fa-cog" style=" width:90px;background: rgba(255,255,255,0.40);border-radius: 4px;border: 2px  solid rgba(0,0,0,0.5);height: 100px;padding: 15px;margin:5px" onclick="navigateTo()"></i>
+				</span>
+
+				<span data-toggle='tooltip' title="Calculator" style="cursor:pointer;" >
+
+				<i id='createFile' class="fa fa-calculator" aria-hidden="true" data-toggle='modal' data-target='.calculator' onclick="clearCalc()" style="border: 2px  solid rgba(0,0,0,0.5);width:90px;height: 100px;background: rgba(255,255,255,0.40);border-radius: 4px;padding: 15px;margin:5px"></i>
+				</span>
+
+				<span data-toggle="tooltip" title="Terminal" style="cursor:pointer;"href="terminal">
+					<!-- <a href="terminal"> -->
+				<i class="fa fa-terminal" style=" width:90px;background: rgba(255,255,255,0.40);border-radius: 4px;border: 2px  solid rgba(0,0,0,0.5);height: 100px;padding: 15px;margin:5px" onclick=""></i><!-- </a> -->
+				</span>
+
+<!--
+        <span data-toggle='' title="" style="cursor:pointer;" >
+
+          <i id='' class="fa fa-calculator" aria-hidden="true" data-toggle='modal' data-target='#term_demo' onclick="" style="border: 1px solid darkblue;width:50px;height: 32px;background-color:  #14A5F4;padding: 4px;margin:4px"></i>
+        </span> -->
+        <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+
+<!-- Modal -->
+
+<!-- <div id="myModal" class="modal fade" role="dialog" style="width:1100px">
+  <div class="modal-dialog" >
+
+
+    <div class="modal-content" style="width:800px">
+      <div class="modal-header">
+
+        <h4 class="modal-title" align="center">TERMINAL</h4>
+      </div>
+      <div style="font-size:20px;color:white"> <span id="demo"></span></div>
+
+      <div class="modal-body" id="term_demo" style="" >
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+
+</div> -->
+        <!-- <div id="term_demo"></div> -->
+                    </div>
+                </a>
+
+
+             </div>
+
+
+          <!--  <div ondragover="drag_over(event)" ondrop="drop(event)" style="border: 1px solid ;background: transparent;height:100vh;width:100%"></div>
+-->
+			<!-- Calculator -->
+
+			<div class='modal fade calculator' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel'>
+				  <div class='modal-dialog modal-md' role='document'>
+				    <div class='modal-content'>
+				      <div class='modal-header'>
+				        <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+				         <h4 class='modal-title'>Calculator</h4>
+				      </div>
+				      <div id = "calculatorBody" class='modal-body'>
+				        <div>
+				          <center>
+				          <label id="answer" class = "num">0</label>
+				          </br>
+				            <input type="text" id="expressionArea" value="0" class = "txta" onchange="change()" autofocus>
+				          </br>
+				            <button onclick="one()" class = "num" >1</button>
+				            <button onclick="two()" class = "num" >2</button>
+				            <button onclick="three()" class = "num" >3</button>
+				            <button onclick="plus()" class = "num" style = "margin : 0px 2px 0px 15px">+</button>
+				            <button onclick="minus()" class = "num" >-</button>
+				          </br>
+				            <button onclick="four()" class = "num">4</button>
+				            <button onclick="five()" class = "num">5</button>
+				            <button onclick="six()" class = "num">6</button>
+				            <button onclick="mul()" class = "num" style = "margin : 0px 2px 0px 15px">*</button>
+				            <button onclick="power()" class = "num">^</button>
+				          </br>
+				            <button onclick="seven()" class = "num" >7</button>
+				            <button onclick="eight()" class = "num" >8</button>
+				            <button onclick="nine()" class = "num" >9</button>
+				            <button onclick="divide()" class = "num" style = "margin : 0px 2px 0px 15px">/</button>
+				            <button onclick="mod()" class = "num" >%</button>
+				          </br>
+				            <button onclick="zero()" class = "num">0</button>
+				            <button onclick="lp()" class = "num">(</button>
+				            <button onclick="rp()" class = "num">)</button>
+				            <button onclick="reset()" class = "num" style = "margin : 0px 2px 0px 15px">AC</button>
+				            <button onclick="buttonClicked()" class = "num">=</button>
+				          </center>
+				        </div>
+				        <div id = "cf" class='modal-footer'>
+				          <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+				        </div>
+				     </div>
+				    </div>
+				  </div>
+				</div>
+
+
+			<div class="desktop"  ondragover="drag_over(event)" ondrop="drop(event)">
+				<a href="{% url 'page:demo'%}">
+					<div id="icon1" draggable="true" ondragstart="drag_start(event)">
+                    <img border="0" alt="page" src="https://cdn3.iconfinder.com/data/icons/common-3/100/ui_file-replace_-512.png" height="50px" width="80px" >
+					<p class="icon_names">Page Replacement</p>
+					</div>
+                </a>
+
+			</div>
+
+			<div class="desktop"  ondragover="drag_over(event)" ondrop="drop(event)">
+				<a href="{% url 'disk:home'%}">
+					<div id="icon2" draggable="true" ondragstart="drag_start(event)">
+                    <img border="0" alt="page" src="https://cdn4.iconfinder.com/data/icons/data-storage-line-icons-vol-2/48/65-512.png" height="50px" width="80px"  >
+					<p class="icon_names">Disk  Scheduling</p>
+					</div>
+                </a>
+
+			</div>
+
+
+            <div class="desktop"  ondragover="drag_over(event)" ondrop="drop(event)">
+				<a href="{% url 'deadlock:home'%}">
+					<div id="icon3" draggable="true" ondragstart="drag_start(event)">
+                    <img border="0" alt="page" src="https://cdn3.iconfinder.com/data/icons/business-and-commercial-set-25/512/lock1_2-512.png" height="50px" width="80px" >
+					<p class="icon_names">Deadlock</p>
+					</div>
+                </a>
+
+			</div>
+
+
+            <div class="desktop"  ondragover="drag_over(event)" ondrop="drop(event)">
+				<a href="{% url 'file_alloc:home'%}">
+					<div id="icon4" draggable="true" ondragstart="drag_start(event)">
+                    <img border="0" alt="page" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrTq0fk8kB6Bke8pshgROsCeHKZHyiKjNshdYu3SkzyUXxerdW" height="50px" width="80px" >
+					<p class="icon_names">File Allocation</p>
+					</div>
+                </a>
+
+			</div>
+
+
+            <div class="desktop"  ondragover="drag_over(event)" ondrop="drop(event)">
+				<a href="{% url 'mat:home'%}">
+					<div id="icon5" draggable="true" ondragstart="drag_start(event)">
+                    <img border="0" alt="page" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpM6jozd5uOvDda8_Klk4CNJCY_J5YyQOztsgxC8fJe7Zbpq3auA" height="50px" width="80px"  >
+					<p class="icon_names">Memory Allocation</p>
+					</div>
+                </a>
+
+			</div>
+
+            <div class="desktop"  ondragover="drag_over(event)" ondrop="drop(event)">
+				<a href="{% url 'process:index'%}">
+					<div id="icon6" draggable="true" ondragstart="drag_start(event)">
+                    <img border="0" alt="page" src="https://cdn3.iconfinder.com/data/icons/planning-2/32/10--512.png" height="50px" width="80px" >
+					<p class="icon_names">Process Scheduling</p>
+					</div>
+                </a>
+
+			</div>
+              <div class="desktop"  ondragover="drag_over(event)" ondrop="drop(event)">
+				<a href="{% url 'sockets:home'%}">
+					<div id="icon7" draggable="true" ondragstart="drag_start(event)">
+                    <img border="0" alt="page" src="https://i.pinimg.com/originals/a0/ec/65/a0ec6522138dadd458ef0c4104017176.jpg" height="50px" width="80px"  >
+					<p class="icon_names">Sockets</p>
+					</div>
+                </a>
+
+			</div>
+
+
+            <div class="desktop"  ondragover="drag_over(event)" ondrop="drop(event)">
+				<a href="{% url 'synchro:semaphores'%}">
+					<div id="icon8" draggable="true" ondragstart="drag_start(event)">
+                    <img border="0" alt="page" src="https://cdn4.iconfinder.com/data/icons/data-analytics-2/512/4-512.png" height="50px" width="80px" >
+					<p class="icon_names">Synchronize</p>
+					</div>
+                </a>
+
+			</div>
+
+
+
+		</div>
+
+		<div id ='exploringContent' hidden>
+
+			<!-- Creating New File -->
+
+
+			<div class='modal fade newFile' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel'>
+	            <div class='modal-dialog modal-sm' role='document'>
+	              <div class='modal-content'>
+	                <div class='modal-header'>
+		                <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+		                 <h4 class='modal-title'>Create New File</h4>
+	                </div>
+	                <div class='modal-body'>
+		                <div class='form-group'>
+		                    <label class='form-label'>File Name </label>
+		                    <input class='form-control create-file' id='file-name' type='text' autofocus >
+		                    <label class='form-label'>File Type </label>
+		                    <select class='form-control' id='file-type' onchange='showHideLink()' >
+		                      <option value='txt' >Text</option>
+		                      <option value='audio'>Audio</option>
+		                      <option value='video'>Video</option>
+		                    </select>
+		                </div>
+		                <div id='showHideLink' class='form-group' hidden>
+		                    <label class='form-label'>Link </label>
+		                  	<input class='form-control create-file' id='file-link' type='text' value='' >
+		                </div>
+		                <div class='modal-footer'>
+		                  <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+		                  <button type='button' class='btn btn-primary' class='close' data-dismiss='modal' aria-label='Close' onclick='creatingFile()'>Save changes</button>
+		                </div>
+		            </div>
+
+	              </div>
+            	</div>
+          	</div>
+
+          	<!-- Creating New Folder -->
+
+            <div class='modal fade newFolder' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel'>
+              <div class='modal-dialog modal-sm' role='document'>
+                <div class='modal-content'>
+                  <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                     <h4 class='modal-title'>Create New Folder</h4>
+                  </div>
+                  <div class='modal-body'>
+                    <div class='form-group'>
+                        <label class='form-label'>Folder Name </label>
+                        <input class='form-control create-folder' id='folder-name' type='text' autofocus >
+
+                    </div>
+
+                    <div class='modal-footer'>
+                      <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+                      <button type='button' class='btn btn-primary' class='close' data-dismiss='modal' aria-label='Close' onclick='creatingFolder()'>Save changes</button>
+                    </div>
+                </div>
+
+                </div>
+              </div>
+          	</div>
+
+
+          	<!-- Showing File Content -->
+
+
+          	 <div class='modal fade applications' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel'>
+              <div class='modal-dialog modal-sm' role='document' id="apps">
+                <div class='modal-content'>
+                  <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close' onclick="closeApps()"><span aria-hidden='true'>&times;</span></button>
+                     <h4 class='modal-title' id="modalTitle"></h4>
+                  </div>
+                  <div class='modal-body' id="textEditor">
+                    <div class='form-group' id="modalBody">
+
+
+                    </div>
+
+                    <div class='modal-footer' >
+                      <button type='button' class='btn btn-default' data-dismiss='modal' onclick="closeApps()">Close</button>
+                      <button type='button' id="modalSave" onclick="saveChanges()" class='btn btn-primary' class='close' data-dismiss='modal' aria-label='Close'>Save changes</button>
+                    </div>
+                </div>
+
+                </div>
+              </div>
+          	</div>
+
+          	<button id='openApps' type='button' class='btn btn-primary' data-toggle='modal' data-target='.applications'></button>
+
+
+          	<!-- Renaming File or Folder -->
+
+
+          	<div class='modal fade rename' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel'>
+	            <div class='modal-dialog modal-sm' role='document' >
+	              <div class='modal-content'>
+	                <div class='modal-header'>
+		                <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+		                 <h4 class='modal-title'>Rename</h4>
+	                </div>
+	                <div class='modal-body' >
+		                <div class='form-group'>
+		                    <label class='form-label'>File Name </label>
+		                    <input class='form-control' id='file-rename' type='text' autofocus>
+		                </div>
+		                <div class='modal-footer'>
+		                  <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+		                  <button type='button' class='btn btn-primary' class='close' data-dismiss='modal' aria-label='Close' onclick='renamingFile()'>Save changes</button>
+		                </div>
+		            </div>
+
+	              </div>
+            	</div>
+          	</div>
+
+
+          	<!-- File Explorer -->
+
+
+            <div class='popup middle' id='fileExploring'>
+
+              <div id='explorer' class='width1020 element'>
+                <div id='header'>
+                  <h3 class='noselect'>Workspace Explorer</h3>
+                  <i class='material-icons noselect' onclick='closeRoot()';>&#xE5CD;</i>
+                  <div id='dir' class='middle'>
+                    <i class='material-icons' onclick="goBack()">&#xE5C4;</i>
+                    <hr>
+                    <a onclick="goHome()">
+                      <i class='material-icons' >&#xE88A;</i>
+                    </a>
+                    <div id='directory' class='top'></div>
+                  </div>
+                  <div id='view' class='noselect middle'>
+
+                  <i class='material-icons' title='Paste' onclick="onPaste()" style="display: none;" id="paste">&#xE14F;</i>
+              	 <button id='rename' type='button' class='btn btn-primary' data-toggle='modal' data-target='.rename'> <i class='material-icons' title='Rename' >text_format</i> </button>
+                  <i class='material-icons' title='Copy' onclick="onCopy()" id="copy">&#xE14D;</i>
+                  <i class='material-icons' title='Cut'  onclick="onCut()" id="cut">&#xE14E;</i>
+                  <i class='material-icons' title='Delete' onclick="deleteAny()" id="delete">&#xE16C;</i>
+
+                  <button id='createFile' type='button' class='btn btn-primary' data-toggle='modal' data-target='.newFile'><i class='material-icons' title='Create File'>add</i></button>
+
+                  <button id='createFolder' type='button' class='btn btn-primary' data-toggle='modal' data-target='.newFolder'> <i class='material-icons' title='Create Folder'>add_box</i></button>
+
+
+                  <span class='taille'></span>
+                  </div>
+
+                </div>
+                <div id='content' class='view-icons' onclick='selection("content")'>
+
+                </div>
+              </div>
+              <span class='taille'></span>
+            </div>
+		</div>
+
+	</div>
+
+
+
+
+{% load static %}
+     <script type="text/javascript" src="{% static 'home/assets/js/jquery-3.2.1.js' %}"></script>
+     <script type="text/javascript" src="{% static 'home/assets/js/bootstrap.min.js' %}"></script>
+     <script type="text/javascript" src="{% static 'home/assets/js/script.js' %}"></script>
+     <script type="text/javascript" src="{% static 'home/assets/js/fileSystem.js' %}"></script>
+   <script type="text/javascript" src="{% static 'home/assets/js/des.js' %}"></script>
+     <script type="text/javascript" src="{% static 'home/assets/js/calc.js' %}"></script>
+</body>
+</html>
+<script>
+  jQuery(function($, undefined) {
+    $('#term_demo').terminal(function(command) {
+        if (command !== '') {
+            try {
+                var result = window.eval(command);
+                if (result !== undefined) {
+                    this.echo(new String(result));
+                }
+            } catch(e) {
+                this.error(new String(e));
+            }
+        } else {
+           this.echo('');
+        }
+    }, {
+        greetings: 'Javascript Interpreter',
+        name: 'js_demo',
+        height: 200,
+        prompt: 'js> '
+    });
+});
+</script>

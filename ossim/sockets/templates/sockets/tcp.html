@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<style>
+  
+    #submit {
+  background-color: #c5f0f1;
+  padding: .5em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 6px;
+  color: #000;
+  width : 125px;
+  height : 40px;
+  font-family: 'Oswald';
+  font-size: 20px;
+  text-decoration: none;
+  border: none;
+}
+
+#submit:hover {
+  border: none;
+  background: #ebc4f2;
+  box-shadow: 0px 0px 1px #777;
+}
+
+#socket {
+  background-color: #c5f0f1;
+  padding: .5em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 6px;
+  color: #000;
+  width : 125px;
+  height : 40px;
+  font-family: 'Oswald';
+  font-size: 20px;
+  text-decoration: none;
+  border: none;
+}
+#socket:hover {
+  border: none;
+  background: #ebc4f2;
+  box-shadow: 0px 0px 1px #777;
+}
+
+#bind {
+  background-color: #c5f0f1;
+  padding: .5em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 6px;
+  color: #000;
+  width : 125px;
+  height : 40px;
+  font-family: 'Oswald';
+  font-size: 20px;
+  text-decoration: none;
+  border: none;
+}
+#bind:hover {
+  border: none;
+  background: #ebc4f2;
+  box-shadow: 0px 0px 1px #777;
+}
+
+#listen {
+  background-color: #c5f0f1;
+  padding: .5em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 6px;
+  color: #000;
+  width : 125px;
+  height : 40px;
+  font-family: 'Oswald';
+  font-size: 20px;
+  text-decoration: none;
+  border: none;
+}
+#listen:hover {
+  border: none;
+  background: #ebc4f2;
+  box-shadow: 0px 0px 1px #777;
+}
+
+#connect {
+  background-color: #c5f0f1;
+  padding: .5em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 6px;
+  color: #000;
+  width : 125px;
+  height : 40px;
+  font-family: 'Oswald';
+  font-size: 20px;
+  text-decoration: none;
+  border: none;
+}
+#connect:hover {
+  border: none;
+  background: #ebc4f2;
+  box-shadow: 0px 0px 1px #777;
+}
+
+#accept {
+  background-color: #c5f0f1;
+  padding: .5em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  width : 125px;
+  height : 40px;
+  border-radius: 6px;
+  color: #000;
+  font-family: 'Oswald';
+  font-size: 20px;
+  text-decoration: none;
+  border: none;
+}
+#accept:hover {
+  border: none;
+  background: #ebc4f2;
+  box-shadow: 0px 0px 1px #777;
+}
+
+#move {
+  background-color: #c5f0f1;
+  padding: .5em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 6px;
+  color: #000;
+  font-family: 'Oswald';
+  font-size: 20px;
+  text-decoration: none;
+  border: none;
+  width : 125px;
+  height : 40px;
+}
+#move:hover {
+  border: none;
+  background: #ebc4f2;
+  box-shadow: 0px 0px 1px #777;
+}
+
+#close {
+  background-color: #c5f0f1;
+  padding: .5em;
+  width : 125px;
+  height : 40  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 6px;
+  color: #000;
+  font-family: 'Oswald';
+  font-size: 20px;
+  text-decoration: none;
+  border: none;
+}
+#close:hover {
+  border: none;
+  background: #ebc4f2;
+  box-shadow: 0px 0px 1px #777;
+}
+  #container {
+  width: 953px;
+  height: 5px;
+  position: absolute;
+  background: #5E2750;
+  top: 68%;
+  left: 18%;
+  }
+  #animate {
+  width: 50px;
+  height: 5px;
+  position: absolute;
+  background-color: #5E2750;
+  top: 0%;
+  left: 0%;
+  opacity: 0;
+  }
+    
+    body{
+    background-color : #5E2750;
+    color: #ebc4f2;
+    }
+
+</style>
+
+<head>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <div class="container-fluid">
+    <center><h1>TCP socket programming</h1></center>
+    <button id = "socket" class="btn btn-primary" type ="button", onclick ="socket()">socket()</button> This  function shall create an unbound socket in a communications domain, and return a file descriptor that can be used in later function calls that operate on sockets.
+    <br/><br/>
+    <button id  ="bind" class="btn btn-primary" type ="button", onclick ="bind()"disabled>bind()</button> This function shall assign a local socket address address to a socket identified by descriptor socket that has no local socket address assigned.
+    <br/><br/>
+    <button id ="listen" class="btn btn-primary" type ="button", onclick ="listen()"disabled>listen()</button> This function shall mark a connection-mode socket, specified by the socket argument, as accepting connections.
+    <br/><br/>
+    <button id ="connect" class="btn btn-primary" type ="button", onclick ="connect()">connect()</button> This function shall attempt to make a connection on a socket
+    <br/><br/>
+    <button id  ="accept"  class="btn btn-primary" type ="button", onclick ="accept()" disabled>accept()</button> This function shall extract the first connection on the queue of pending connections, create a new socket with the same address family as the specified socket, and allocate a new file descriptor for that socket.
+    <br/><br/>
+    <button id ="move" class="btn btn-primary" type ="button", onclick ="myMove()"disabled>send()</button> This function sends a message on a socket
+    <br/><br/>
+    <button id ="close" class="btn btn-primary" type ="button", onclick ="closee()" disabled>close</button> Close the connection
+
+    <button type = "button", id ="server", name = "server", style="background-color: #5E2750;color:#5E2750;height:25px;width:140px;position:absolute;top:72%;left:10%;border-radius:25px;border:1px solid #5E2750">Server </button>
+    <input type="image" name="imgbtn" src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/128/Devices-computer-icon.png"  alt="Tool Tip", style="position:absolute;top:60%;left:10%;  ">
+
+    <button type = "button", id ="client", name = "client", style="background-color: #5E2750;color:#5E2750;height:25px;width:140px;position:absolute;top:72%;left:80%;border-radius:25px;border:1px solid #5E2750">Client </button>
+    <input type="image" name="imgbtn" src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/128/Devices-computer-icon.png"  alt="Tool Tip", style="position:absolute;top:60%;left:80%;  ">
+
+    <button type = "button", id ="one", name = "one", style="height:20px;width:30px;position:absolute;top:61%;left:18%;border-radius:30px;border:1px solid #5E2750;background-color:#5E2750"></button>
+    <button type = "button", id ="two", name = "two", style="height:20px;width:30px;position:absolute;top:66%;left:19%;border-radius:30px;border:1px solid #5E2750;background-color:#5E2750"></button>
+    <button type = "button", id ="three", name = "three", style="height:20px;width:30px;position:absolute;top:71%;left:18%;border-radius:30px;border:1px solid #5E2750;background-color:#5E2750"></button>
+    <button type = "button", id ="four", name = "four", style="height:20px;width:30px;position:absolute;top:57%;left:20%;border-radius:30px;border:1px solid #5E2750;background-color:#5E2750"></button>
+    <button type = "button", id ="five", name = "five", style="height:20px;width:30px;position:absolute;top:66%;left:22%;border-radius:30px;border:1px solid #5E2750;background-color:#5E2750"></button>
+    <button type = "button", id ="six", name = "six", style="height:20px;width:30px;position:absolute;top:75%;left:20%;border-radius:30px;border:1px solid #5E2750;background-color:#5E2750"></button>
+
+    <button type = "button", id ="connection", name = "connection", style="height:5px;width:953px;position:absolute;top:68%;left:18%;background-color:white;border:1px solid #5E2750"> </button>
+
+    <div id ="container">
+      <div id ="animate"></div>
+    </div>
+
+    <script type ="text/javascript">
+
+    function socket()
+    {
+      document.getElementById("server").style.backgroundColor = '#c5f0f1';
+      document.getElementById("client").style.backgroundColor = '#c5f0f1';
+      document.getElementById("bind").disabled = false;
+    }
+
+    function bind()
+    {
+      document.getElementById("server").style.backgroundColor = '#ebc4f2';
+      document.getElementById("listen").disabled = false;
+    }
+
+    function listen()
+    {
+      document.getElementById("one").style.backgroundColor = '#FFFF00';
+      document.getElementById("two").style.backgroundColor = '#FFFF00';
+      document.getElementById("three").style.backgroundColor = '#FFFF00';
+      document.getElementById("four").style.backgroundColor = '#FFFF00';
+      document.getElementById("five").style.backgroundColor = '#FFFF00';
+      document.getElementById("six").style.backgroundColor = '#FFFF00';
+      document.getElementById("connect").disabled = false;
+    }
+
+    function connect()
+    {
+      //document.getElementById("connection").style.border = '1px solid #000000';
+      document.getElementById("container").style.border = '1px solid #000000';
+
+      document.getElementById("container").style.backgroundColor = '#FFFFFF';
+      document.getElementById("accept").disabled = false;
+      document.getElementById("close").disabled = false;
+    }
+
+    function accept()
+    {
+      document.getElementById("client").style.backgroundColor = '#ebc4f2';
+      //document.getElementById("connection").style.backgroundColor = '#00FF00';
+      document.getElementById("container").style.backgroundColor = '#00FF00';
+      document.getElementById("move").disabled = false;
+    }
+
+    function myMove() {
+      document.getElementById("animate").style.backgroundColor = '#FF0000';
+      document.getElementById("animate").style.opacity = "1.0";
+    var elem = document.getElementById("animate");
+    var pos = 0;
+    var id = setInterval(frame, 5);
+    function frame() {
+      if (pos == 903) {
+        clearInterval(id);
+        document.getElementById("animate").style.backgroundColor = '#5E2750';
+      } else {
+        pos++;
+        elem.style.left = pos + 'px';
+      }
+      }
+    }
+
+    function closee()
+    {
+      document.getElementById("animate").style.backgroundColor = '#5E2750';
+      document.getElementById("server").style.backgroundColor = '#5E2750';
+      document.getElementById("client").style.backgroundColor = '#5E2750';
+
+      document.getElementById("one").style.backgroundColor = '#5E2750';
+      document.getElementById("two").style.backgroundColor = '#5E2750';
+      document.getElementById("three").style.backgroundColor = '#5E2750';
+      document.getElementById("four").style.backgroundColor = '#5E2750';
+      document.getElementById("five").style.backgroundColor = '#5E2750';
+      document.getElementById("six").style.backgroundColor = '#5E2750';
+
+      document.getElementById("container").style.backgroundColor = '#5E2750';
+      document.getElementById("container").style.border = '1px solid #5E2750';
+
+      document.getElementById("bind").disabled = true;
+      document.getElementById("listen").disabled = true;
+      document.getElementById("connect").disabled = true;
+      document.getElementById("accept").disabled = true;
+      document.getElementById("move").disabled = true;
+      document.getElementById("close").disabled = true;
+    }
+
+
+    </script>
+  </div>
+</body>

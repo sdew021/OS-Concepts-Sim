@@ -7,7 +7,7 @@
     Process
   </title>
   <script type='text/javascript' src='{% static 'js/input1.js' %}'></script>
-  <script type='text/javascript' src='{% static 'js/display1.js' %}'></script>
+  <script type='text/javascript' src='{% static 'js/display13.js' %}'></script>
   <link rel="stylesheet" href='{% static 'css/demo1.css' %}'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -17,9 +17,8 @@
 
 
 <body style="padding:10px;">
-  <div class="panel panel-primary">
-      <div class="panel-heading"><h1 style="text-alig
-        var text = JSON.strn:center;">
+  <div class="panel panel-danger">
+      <div class="panel-heading"><h1 style="text-align:center;text-align: center;text-shadow: 1px 1px blue">
         MultiLevel Queue Scheduling
       </h1></div>
   <div class="panel-body">
@@ -28,32 +27,32 @@
     </div>
 
     <div class="card" style="height:70px;">
-        <div style="width:250px;float:left;text-align:left;">
+        <div style="width:250px;float:left;text-align:left;color:#800000">
           Enter arrival time:
           <input style="width:200px;"id="newarrivaltime" class="form-control" type="text" value=""></input>
         </div>
-        <div style="width:300px;float:left;text-align:left;">
+        <div style="width:300px;float:left;text-align:left;color:#800000">
           Enter burst time:
           <input style="width:200px;float:left;" id="newbursttime" class="form-control" type="text" value=""></input>
         </div>
-        <div style="width:300px;float:left;text-align:left;">
+        <div style="width:300px;float:left;text-align:left;color:#800000">
           Enter Priority:
                   <br>
-                      <select class="form-control" id="sel1" style="width:200px;">
+                      <select class="form-control" id="sel1" style="width:200px;color:white;background-color: #CD853F">
                         <option>Foreground Process(1)</option>
                         <option>Background Process(0)</option>
                       </select>
                   </div>
-          <button class="btn btn-success" onclick="addToList()" style="float:left;margin-top:20px;margin-left:10px;">Add</button>
+          <button class="btn btn-success" onclick="addToList()" style="float:left;margin-top:20px;margin-left:10px; ">Add</button>
         </div>
     </div>
   </div>
 
     <div class="panel-footer" style="height:50px;">
-      <button style="float:right;" id="sender" class="btn btn-primary">Send the entire data</button>
+      <button style="float:right;background-color:#99004D;color:white;" id="sender" class="btn btn-primary">Send the entire data</button>
     </div>
   </div>
-  <div class="panel panel-success">
+  <div class="panel panel-info">
     <div class="panel-heading">
       <h3>
       Gantt chart
@@ -65,19 +64,19 @@
   </div>
     <br><br>
 </div>
-  <div class="panel panel-warning" style="width:50%;float:left;">
+  <div class="panel panel-success" style="width:50%;float:left;">
   <div class="panel-heading">
     <h3>Operations Taking Place</h3>
   </div>
   <div id="comments" class="panel-content">
   </div>
 </div>
-  <div class="panel panel-warning" style="width:50%;float:left;">
+  <div class="panel panel-primary" style="width:50%;float:left;">
   <div class="panel-heading">
     <h3>Table</h3>
   </div>
     <div class="panel-content">
-  <table id="ptab" class="table table-bordered">
+  <table id="ptab" class="table table-bordered" style=>
   <thead>
   <tr id="thead">
   <th>PNO.</th>
