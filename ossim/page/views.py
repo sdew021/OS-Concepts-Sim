@@ -43,6 +43,9 @@ def algo(request):
 def demo2(request):
     return render(request,'page2.html')
 
+#ADDED HERE
+def demo3(request):
+    return render(request,'wiki.html')
 
 @csrf_exempt
 def algo2(request):

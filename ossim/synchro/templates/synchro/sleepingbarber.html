@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-
+{% load staticfiles %}
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="{% static 'css/cigsmoker.css' %}" rel="stylesheet" />
 </head>
 
 <body>
@@ -26,19 +27,19 @@
     <button type = "button", id ="four", name = "four", style="height:100px;width:120px;position:absolute;top:75%;left:38%;background-color:white"> Seat 4</button>
     <button type = "button", id ="five", name = "five", style="height:100px;width:120px;position:absolute;top:75%;left:47%;background-color:white"> Seat 5</button>
     <button type = "button", id ="six", name = "six", style="height:100px;width:120px;position:absolute;top:75%;left:56%;background-color:white"> Seat 6</button>
-    <button type = "button", id ="seven", name = "seven", style="height:100px;width:120px;position:absolute;top:75%;left:65%;background-color:white"> Seat 7</button>
+    <!-- <button type = "button", id ="seven", name = "seven", style="height:100px;width:120px;position:absolute;top:75%;left:65%;background-color:white"> Seat 7</button> -->
 
     <!--button type ="button", onclick ="initiate()">Next!</button-->
 
     <button class="btn btn-primary" id ="prod", type ="button", onclick ="produce()", style ="height:150px;width:250px;position:absolute;top:20%;left:15%;font-size:25px">Enter</button>
     <button class="btn btn-primary" id ="con", type ="button", onclick ="exit()", style ="height:150px;width:250px;position:absolute;top:45%;left:15%;font-size:25px" disabled>Exit</button>
 
-    <button class="btn btn-warning" id ="buffer-size", type ="button" style ="height:50px;width:143px;position:absolute;top:25%;left:42%;">Waiting Seats = 7</button>
+    <button class="btn btn-warning" id ="buffer-size", type ="button" style ="height:50px;width:143px;position:absolute;top:25%;left:42%;">Waiting Seats = 6</button>
     <button class="btn btn-warning" id ="count", type ="button" style ="height:50px;width:143px;position:absolute;top:33%;left:42%;">waiting = 0</button>
 
 
     <script type = "text/javascript">
-      var queue = [0,0,0,0,0,0,0]; var num=0;
+      var queue = [0,0,0,0,0,0]; var num=0;
       var rear =-1; var front =-1;
       var hc = 0;
 
@@ -81,11 +82,11 @@
           var change = document.getElementById("count");
           change.innerHTML ="waiting = 6"
         }
-        if(counter==7)
-        {
-          var change = document.getElementById("count");
-          change.innerHTML ="waiting = 7"
-        }
+        // if(counter==7)
+        // {
+        //   var change = document.getElementById("count");
+        //   change.innerHTML ="waiting = 7"
+        // }
 
       }
 
@@ -137,10 +138,10 @@
         {
           document.getElementById("six").style.backgroundColor = '#00BFFF';
         }
-        if(queue[6]==1)
-        {
-          document.getElementById("seven").style.backgroundColor = '#00BFFF';
-        }
+        // if(queue[6]==1)
+        // {
+        //   document.getElementById("seven").style.backgroundColor = '#00BFFF';
+        // }
 
         if(queue[0]==0)
         {
@@ -166,17 +167,17 @@
         {
           document.getElementById("six").style.backgroundColor = '#FFFFFF';
         }
-        if(queue[6]==0)
-        {
-          document.getElementById("seven").style.backgroundColor = '#FFFFFF';
-        }
+        // if(queue[6]==0)
+        // {
+        //   document.getElementById("seven").style.backgroundColor = '#FFFFFF';
+        // }
         check();
       }
 
       function produce()
       {
           num++;
-          if(num==7)
+          if(num==6)
           {
             document.getElementById("prod").disabled = true;
           }
@@ -188,7 +189,7 @@
           }
           else
           {
-              rear = (rear+1)%7;
+              rear = (rear+1)%6
               queue[rear]=1;
           }
 
@@ -218,7 +219,7 @@
         else
         {
           queue[front]=0;
-          front = (front+1)%7;
+          front = (front+1)%6;
         }
         color();
         counter();

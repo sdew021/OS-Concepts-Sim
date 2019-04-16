@@ -23,6 +23,8 @@ def sem_demo(request,pk):
         return render(request, 'synchro/diningphils.html')
     if(pk=='4'):
         return render(request, 'synchro/cigsmoker.html')
+    if(pk=='5'):
+        return render(request, 'synchro/sleepingbarber.html')
 
 def socket_demo(request,pk):
     if(pk=='1'):

@@ -88,10 +88,10 @@
               if(match===0 && ocb===0){
                 smokers[n]=1;
                   alert('Smoker 1 is smoking');
-              document.getElementById('match').style.display='block';
-              document.getElementById('ocb').style.display='block';
-              moveAnimate('#match' , '#one');
-              moveAnimate('#ocb' , '#one');
+              // document.getElementById('match').style.display='block';
+              // document.getElementById('ocb').style.display='block';
+              // moveAnimate('#match' , '#one');
+              // moveAnimate('#ocb' , '#one');
               match=1;
               ocb=1;
               document.getElementById('cig1').style.display='block';
@@ -107,12 +107,15 @@
                 alert('Smoker 1 has finished smoking');
                 match=0;
                 ocb=0;
-
+                document.getElementById('match').style.display='block';
+              document.getElementById('ocb').style.display='block';
+              moveAnimate('#match' , '#one');
+              moveAnimate('#ocb' , '#one');
                 smokers[n]=0;
-                document.getElementById('tob').style.display='none';
-                document.getElementById('ocb').style.display='none';
-                document.getElementById('match').style.display='none';
-                document.getElementById('cig1').style.display='none';
+                // document.getElementById('tob').style.display='none';
+                // document.getElementById('ocb').style.display='none';
+                // document.getElementById('match').style.display='none';
+                // document.getElementById('cig1').style.display='none';
               }
 
 
