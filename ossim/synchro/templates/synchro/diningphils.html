@@ -25,8 +25,9 @@
       <img src="/static/images/eating.jpeg"> - <b>Eating</b> <br> <br>
     </div>
 
-    <button type = "button", id ="table", name = "table"> </button>
-
+    <button type = "button", id ="table", name = "table", 
+    style="height:300px;width:300px;position:absolute;top:33%;left:46%;border-radius:300px;border:1px solid #000;background-color:#CD853F"> </button>
+    <img src="{% static 'img/food.png' %}" alt="Mountain View" style="position:absolute;left:47.5%;top:36%;width:250px;height:250px;">
 
       <img src="/static/images/phil.jpeg"<button type = "button", id ="one", name = "one" , onclick="initiate('0')" >  </button>
       <img src="/static/images/phil.jpeg"<button type = "button", id ="five", name = "one" , onclick="initiate('4')"> </button>
@@ -34,11 +35,11 @@
       <img src="/static/images/phil.jpeg"<button type = "button", id ="four", name = "one" , onclick="initiate('3')"> </button>
       <img src="/static/images/phil.jpeg"<button type = "button", id ="three", name = "one" , onclick="initiate('2')"> </button>
 
-    <button type = "button", id ="first", name = "one"> C1 </button>
-    <button type = "button", id ="second", name = "one"> C2 </button>
-    <button type = "button", id ="third", name = "one"> C3 </button>
-    <button type = "button", id ="fifth", name = "one"> C5 </button>
-    <button type = "button", id ="fourth", name = "one"> C4 </button>
+    <button type = "button", id ="first", name = "one"> F1 </button>
+    <button type = "button", id ="second", name = "one"> F2 </button>
+    <button type = "button", id ="third", name = "one"> F3 </button>
+    <button type = "button", id ="fifth", name = "one"> F5 </button>
+    <button type = "button", id ="fourth", name = "one"> F4 </button>
 
 
     <script type = "text/javascript">
@@ -76,67 +77,67 @@
 
           if(phils[0]==0)
           {
-              document.getElementsByTagName('img')[3].src='/static/images/phil.jpeg';
+              document.getElementById('one').src='/static/images/phil.jpeg';
           }
           if(phils[1]==0)
           {
-              document.getElementsByTagName('img')[5].src='/static/images/phil.jpeg';
+              document.getElementById('two').src='/static/images/phil.jpeg';
           }
           if(phils[2]==0)
           {
-              document.getElementsByTagName('img')[7].src='/static/images/phil.jpeg';
+              document.getElementById('three').src='/static/images/phil.jpeg';
           }
           if(phils[3]==0)
           {
-              document.getElementsByTagName('img')[6].src='/static/images/phil.jpeg';
+              document.getElementById('four').src='/static/images/phil.jpeg';
           }
           if(phils[4]==0)
           {
-              document.getElementsByTagName('img')[4].src='/static/images/phil.jpeg';
+              document.getElementById('five').src='/static/images/phil.jpeg';
           }
 
 
 
           if(phils[0]==1)
           {
-            document.getElementsByTagName('img')[3].src='/static/images/hungry.jpeg';
+            document.getElementById('one').src='/static/images/hungry.jpeg';
           }
           if(phils[1]==1)
           {
-            document.getElementsByTagName('img')[5].src='/static/images/hungry.jpeg';
+            document.getElementById('two').src='/static/images/hungry.jpeg';
           }
           if(phils[2]==1)
           {
-            document.getElementsByTagName('img')[7].src='/static/images/hungry.jpeg';
+            document.getElementById('three').src='/static/images/hungry.jpeg';
           }
           if(phils[3]==1)
           {
-            document.getElementsByTagName('img')[6].src='/static/images/hungry.jpeg';
+            document.getElementById('four').src='/static/images/hungry.jpeg';
           }
           if(phils[4]==1)
           {
-            document.getElementsByTagName('img')[4].src='/static/images/hungry.jpeg';
+            document.getElementById('five').src='/static/images/hungry.jpeg';
           }
 
           if(phils[0]==2)
           {
-            document.getElementsByTagName('img')[3].src='/static/images/eating.jpeg';
+            document.getElementById('one').src='/static/images/eating.jpeg';
           }
           if(phils[1]==2)
           {
-            document.getElementsByTagName('img')[5].src='/static/images/eating.jpeg';
+            document.getElementById('two').src='/static/images/eating.jpeg';
           }
           if(phils[2]==2)
           {
-            document.getElementsByTagName('img')[7].src='/static/images/eating.jpeg';
+            document.getElementById('three').src='/static/images/eating.jpeg';
           }
           if(phils[3]==2)
           {
-            document.getElementsByTagName('img')[6].src='/static/images/eating.jpeg';
+            document.getElementById('four').src='/static/images/eating.jpeg';
           }
           if(phils[4]==2)
           {
-            document.getElementsByTagName('img')[4].src='/static/images/eating.jpeg';
+            document.getElementById('five').src='/static/images/eating.jpeg';
           }
 
           if(forks[0]==0)
