@@ -108,7 +108,4 @@
   },
   "retina_detect": true
   
-"devDependencies": {
-  "webpack-dev-server": ">=3.1.11"
-}
 }
