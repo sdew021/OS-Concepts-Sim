@@ -90,7 +90,7 @@ h1 {
 
 
 
-  var myVar = setInterval(myTimer, 1000);
+  var myVar = setInterval(myTimer, 500);
 
 function myTimer() {
 
@@ -99,16 +99,16 @@ function myTimer() {
 		     var myVar1 = setInterval(myTimer, 1000);
 
 function myTimer() {
-    document.getElementById('titl').innerHTML = "Running power-on self test...";
+    document.getElementById('titl').innerHTML = "BOOTING";
       var myVar2 = setInterval(myTimer, 1000);
       function myTimer() {
-         document.getElementById('titl').innerHTML = "Finding a boot device...";
+         document.getElementById('titl').innerHTML = "BOOTING .";
          var myVar3 = setInterval(myTimer, 1000);
            function myTimer() {
-         document.getElementById('titl').innerHTML = "Loading the Operating System...";
+         document.getElementById('titl').innerHTML = "BOOTING . .";
          var myVar3 = setInterval(myTimer, 1000);
            function myTimer() {
-         document.getElementById('titl').innerHTML = "Almost done, transferring control...";
+         document.getElementById('titl').innerHTML = "BOOTING . . .";
          var myVar3 = setInterval(myTimer, 1000);
                 function myTimer() {
                   window.location="/login";
@@ -137,7 +137,7 @@ function myTimer() {
 
 	<header class="entry-header">
 		<!--<div style="border: 5px solid white">Hi </div>-->
-		<h1 class="entry-title" id="titl" align = "center">Operating System is Booting Up</h1>
+		<h1 class="entry-title" id="titl" align = "center">Powering up...</h1>
 
 	</header>
 	<div id="loader-wrapper">
