@@ -13,3 +13,6 @@ def rag(request):
 
 def bankers(request):
     return render(request, 'deadlock/bankers.html')
+
+def wiki(request):
+    return render(request, 'deadlock/wiki.html')    

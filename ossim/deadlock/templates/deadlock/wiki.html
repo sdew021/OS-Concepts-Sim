@@ -1,0 +1,49 @@
+<html>
+<head>
+	<style type="text/css">
+		body{
+			background-color: #0099ff;
+			text-decoration-color: #000000;
+			font-family: "arial";
+		}
+	</style>
+<title> Resource Allocation Graphs </title>
+</head>
+
+<body background-color="blue", color = "black">
+	<h2 align="center"> Resource Allocation Graphs </h2><br>
+	<p style="display: flex; flex-wrap: wrap;">
+	As Banker’s algorithm using some kind of table like allocation, request, available all that thing to understand what is the state of the system. Similarly, if you want to understand the state of the system instead of using those table, actually tables are very easy to represent and understand it, but then still you could even represent the same information in the graph. That graph is called Resource Allocation Graph (RAG).
+</p><br>
+<p style="display: flex; flex-wrap: wrap;">
+	So, resource allocation graph is explained to us what is the state of the system in terms of processes and resources. Like how many resources are available, how many are allocated and what is the request of each process. Everything can be represented in terms of the diagram. One of the advantages of having a diagram is, sometimes it is possible to see a deadlock directly by using RAG, but then you might not be able to know that by looking at the table. But the tables are better if the system contains lots of process and resource and Graph is better if the system contains less number of process and resource.
+</p><br>
+<p style="display: flex; flex-wrap: wrap;">
+	We know that any graph contains vertices and edges. So RAG also contains vertices and edges. In RAG vertices are two type –<br>
+	1. Process vertex – Every process will be represented as a process vertex.<br><br>
+	2. Resource vertex – Every resource will be represented as a resource vertex. It is also two type –<br>
+	a. Single instance type resource – It represents as a box, inside the box, there will be one dot.So the number of dots indicate how many instances are present of each resource type.<br>
+	b.Multi-resource instance type resource – It also represents as a box, inside the box, there will be many dots present.<br>
+</p><br>
+<p style="display: flex; flex-wrap: wrap;">
+	Now coming to the edges of RAG.There are two types of edges in RAG –<br>
+	1. Assign Edge – If you already assign a resource to a process then it is called Assign edge.<br><br>
+2. Request Edge – It means in future the process might want some resource to complete the execution, that is called request edge.<br><br>
+
+So, if a process is using a resource, an arrow is drawn from the resource node to the process node. If a process is requesting a resource, an arrow is drawn from the process node to the resource node.<br>
+
+If there is a cycle in the Resource Allocation Graph and each resource in the cycle provides only one instance, then the processes will be in deadlock.<br>
+
+But in multi-instance resource cycle is not sufficient condition for deadlock.<br>
+</p>
+
+<a href="http://127.0.0.1:5000/deadlock/rag/">GoBackToResourceAddressSpace</a>
+</body>
+</html>
+
+
+
+
+
+
+
