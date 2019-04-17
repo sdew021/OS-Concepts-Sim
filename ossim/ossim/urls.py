@@ -15,7 +15,17 @@ urlpatterns = [
     url(r'^deadlock/',include('deadlock.urls')),
     url(r'^page/',include('page.urls')),
     url(r'^matdemo/', include('mat.urls')),
-    #url(r'^mat/', views.matindex),
+    url(r'^team/', views.matindex),
+    url(r'^wiki/', views.wiki),
+    url(r'^pr/', views.pr),
+    url(r'^ds/', views.ds),
+    url(r'^ba/', views.ba),
+    url(r'^fa/', views.fa),
+    url(r'^mvt/', views.mvt),
+    url(r'^mft/', views.mft),
+    url(r'^ps/', views.ps),
+    url(r'^soc/', views.soc),
+    url(r'^sync/', views.sync),
     url(r'^disk/',include('disk_sched.urls'),name='disk'),
     url(r'^process/',include('process.urls'))
 ]
